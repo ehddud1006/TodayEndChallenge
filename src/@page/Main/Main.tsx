@@ -44,7 +44,7 @@ const MainPage = () => {
       const hour = Number(item.Date.slice(11, 13));
       const behindHour = item.Date.slice(13, 16);
       const ampm = hour >= 12 ? '오후 ' : '오전 ';
-      const hour12 = hour >= 13 ? String(hour - 12).padStart(2, '0') : hour;
+      const hour12 = hour >= 13 ? String(hour - 12).padStart(2, '0') : hour === 0 ? '12' : hour;
 
       if (item.Message === '사진') {
         temp.push(
